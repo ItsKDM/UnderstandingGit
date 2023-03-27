@@ -29,14 +29,21 @@ document.title = "Title changed";
 // }
 
 //GETELEMENTSBYCLASSNAME
-var items = document.getElementsByClassName('list-group-item');
-console.log(items);
-for(var i = 0; i<items.length; i++){
-    items[i].style.fontWeight = 'bold';
+// var items = document.getElementsByClassName('list-group-item');
+// console.log(items);
+// for(var i = 0; i<items.length; i++){
+//     items[i].style.fontWeight = 'bold';
+// }
+// console.log(items[2]);
+// items[2].style.backgroundColor = 'green';
+// items[4].style.backgroundColor = 'yellow';
+
+//GETELEMENTSBYTAGNAME
+var li = document.getElementsByTagName('li');
+console.log(li);
+for(var i = 0; i<li.length; i++){
+    li[i].style.fontWeight = 'bold';
 }
-// items[1].style.fontWeight = 'bold';
-// items[2].style.fontWeight = 'bold';
-// items[3].style.fontWeight = 'bold';
-// items[0].style.fontWeight = 'bold';
-console.log(items[2]);
-items[2].style.backgroundColor = 'green';
+console.log(li[2]);
+li[2].style.backgroundColor = 'green';
+li[4].style.backgroundColor = 'yellow';
