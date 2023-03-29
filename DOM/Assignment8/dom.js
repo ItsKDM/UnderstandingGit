@@ -17,6 +17,7 @@ function addItem(e){
 
     //Get input value
     var newItem = document.getElementById('item').value;
+    var newDescription = document.getElementById('description').value;
 
     //Create new li element
     var li = document.createElement('li');
@@ -24,17 +25,31 @@ function addItem(e){
     li.className = 'list-group-item';
     //Add text node with input value
     li.appendChild(document.createTextNode(newItem));
+    li.appendChild(document.createTextNode(newDescription));
 
     //Create delete button element
     var deleteBtn = document.createElement('button');
 
     //Add classes to delete btn
     deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+    
     //Append text node
     deleteBtn.appendChild(document.createTextNode('X'));
 
     //Append btn to li
     li.appendChild(deleteBtn);
+    
+    //Create warning button element
+    var warningBtn = document.createElement('button');
+
+    //Add classes to warning btn
+    warningBtn.className = 'btn btn-warning btn-sm float-right warning';
+
+    //Append text node
+    warningBtn.appendChild(document.createTextNode('X'));
+
+    //Append warning btn to li
+    li.appendChild(warningBtn);
 
     //Append li to list
     itemList.appendChild(li);
