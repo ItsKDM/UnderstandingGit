@@ -44,7 +44,7 @@ function showNewUserOnScreen(user){
 
 function deleteUser(id){
     axios.delete(
-        "https://crudcrud.com/api/8e8cdb82e39b49ec8081278c9db95111/appointmentData"
+        `https://crudcrud.com/api/8e8cdb82e39b49ec8081278c9db95111/appointmentData/${id}`
     )
     .then((res) => {
         console.log(res);
