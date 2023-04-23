@@ -58,3 +58,47 @@ function removeUserFromScreen(emailId){
     const childNodeToBeDeleted = document.getElementById(emailId);
     parentNode.removeChild(childNodeToBeDeleted);
 }
+
+function editUserDetails(user) {
+    const form = document.querySelector('form');
+    form.username.value = user.name;
+    form.emailId.value = user.email;
+    form.phonenumber.value = user.phonenumber;
+    form.onsubmit = function(event) {
+        event.preventDefault();
+        const updatedName = event.target.username.value;
+        const updatedEmail = event.target.emailId.value;
+        const updatedPhonenumber = event.target.phonenumber.value;
+        const obj = {
+            name: updatedName,
+            email: updatedEmail,
+            phonenumber: updatedPhonenumber
+        };
+        axios.put(
+            `https://crudcrud.com/api/8e8cdb82e39b49ec8081278c9db95111/appointmentData/${user._id}`,
+            obj
+        )
+        .then(response => {
+            const updatedUser = response.data;
+            const parentNode = document.getElementById("listOfUsers");
+            const childNodeToBeUpdated = document.getElementById(updatedUser.email);
+            // const updatedChildHTML = `<li id=${updatedUser.email}> ${updatedUser.name} - ${updatedUser.email}
+            //     <button onclick=deleteUser('${updatedUser._id}')> Delete User </button>
+            // </li>`;
+            const updatedchildHTML = `<li id=${user.email}> ${user.name} - ${user.email}
+                <button onclick=editUser('${user._id}')> Edit User </button>
+            </li>`;
+            parentNode.replaceChild(convertToElement(updatedChildHTML), childNodeToBeUpdated);
+            form.onsubmit = saveToLocalStorage;
+            form.reset();
+        })
+        .catch(err => console.log(err));
+    }
+}
+
+function convertToElement(html) {
+    const template = document.createElement('template');
+    html = html.trim();
+    template.innerHTML = html;
+    return template.content.firstChild;
+}
