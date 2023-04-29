@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+      integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="row m-4 mt-8">
+        <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <div class="container border border-2 border-warning shadow p-3 mb-5 bg-white rounded">
+    <h1>To Do List App</h1>
+    <form id="todo-form">
+        <label for="todo-name">Name:</label>
+        <input type="text" id="todo-name" required>
+        <label for="todo-description">Description:</label>
+        <input type="text" id="todo-description" required>
+        <button type="submit">submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+
+    <div class="row m-4 mt-8 mb-8">
+        <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <div class="todo-section">
+        <h2>Todo Remaining - </h2>
+        <ul id="todo-remaining"></ul>
+    </div>
+    </div>
+    </div>
+    <div class="row m-4 mt-8">
+        <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <div class="todo-section">
+        <h2>Todo Completed - <h2>
+        <ul id="todo-completed"></ul>
+    </div>
+    </div>
+    </div>
+    <!-- <ul class="listOfTodo"></ul> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
